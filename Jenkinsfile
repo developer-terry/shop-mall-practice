@@ -21,7 +21,7 @@ pipeline {
         sh 'echo $PROJECT_VERSION'
         sh 'echo $PROJECT_NAME'
         container('maven') {
-          sh "mvn clean install -Dmaven.test.skip=true"
+          sh "mvn clean install -Dmaven.test.skip=true -gs `pwd`/maven-settings.xml"
         }
       }
     }
