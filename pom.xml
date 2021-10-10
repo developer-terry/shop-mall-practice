@@ -89,9 +89,9 @@
 	<packaging>pom</packaging>
 
 	<properties>
-<!--		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
-<!--		<maven.compiler.source>11</maven.compiler.source>-->
-<!--		<maven.compiler.target>11</maven.compiler.target>-->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
 		<sonar.jacoco.reportPaths>${PWD}/./target/jacoco.ecex</sonar.jacoco.reportPaths>
 		<sonar.groovy.binaries>target/classes</sonar.groovy.binaries>
 	</properties>
