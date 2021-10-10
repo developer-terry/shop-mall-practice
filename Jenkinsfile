@@ -20,6 +20,9 @@ pipeline {
         git(credentialsId: 'github-id', url: 'https://github.com/developer-terry/shop-mall-practice.git', branch: 'master', changelog: true, poll: false)
         sh 'echo $PROJECT_VERSION'
         sh 'echo $PROJECT_NAME'
+        container('maven') {
+          sh "mvn clean install -Dmaven.test.skip=true"
+        }
       }
     }
     stage('sonarqube analysis') {
