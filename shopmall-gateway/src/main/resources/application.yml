@@ -1,0 +1,87 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: baidu_route
+          uri: https://www.baidu.com
+          predicates:
+            - Query=url,baidu
+        - id: google_route
+          uri: https://www.google.com
+          predicates:
+            - Query=url,google
+
+        - id: product_route
+          uri: lb://shopmall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+      #            - RewritePath=/product/(?<segment>.*),/product/(?<segment>.*)
+      #            - RewritePath=/api2/product/(?<segment>.*),/product/$\{segment}
+      #          /product/category/list/tree
+
+        - id: member_route
+          uri: lb://shopmall-member
+          predicates:
+            - Path=/api/member/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: coupon_route
+          uri: lb://shopmall-coupon
+          predicates:
+            - Path=/api/coupon/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: ware_route
+          uri: lb://shopmall-ware
+          predicates:
+            - Path=/api/ware/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: thirdparty_route
+          uri: lb://shopmall-thirdparty
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: admin_route
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+
+        - id: shopmall_host_route
+          uri: lb://shopmall-product
+          predicates:
+            - Host=shopmall-test.com, item.shopmall-test.com
+
+        - id: shopmall_search_route
+          uri: lb://shopmall-search
+          predicates:
+            - Host=search.shopmall-test.com
+
+        - id: shopmall_auth_route
+          uri: lb://shopmall-auth
+          predicates:
+            - Host=auth.shopmall-test.com
+
+        - id: shopmall_cart_route
+          uri: lb://shopmall-cart
+          predicates:
+            - Host=cart.shopmall-test.com
+
+        - id: shopmall_order_route
+          uri: lb://shopmall-order
+          predicates:
+            - Host=order.shopmall-test.com
+
+        - id: shopmall_seckill_route
+          uri: lb://shopmall-seckill
+          predicates:
+            - Host=seckill.shopmall-test.com

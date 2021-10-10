@@ -5,15 +5,36 @@
 	<groupId>com.practice.shopmall</groupId>
 	<artifactId>shopmall</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>shopmall</name>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <name>shopmall</name>
 	<description>聚合服務</description>
 	<packaging>pom</packaging>
 
 	<modules>
+		<module>shopmall-auth</module>
+		<module>shopmall-thirdparty</module>
 		<module>shopmall-coupon</module>
 		<module>shopmall-member</module>
 		<module>shopmall-order</module>
 		<module>shopmall-product</module>
+		<module>shopmall-cart</module>
 		<module>shopmall-ware</module>
+		<module>shopmall-gateway</module>
+		<module>renren-fast</module>
+		<module>renren-generator</module>
+		<module>shopmall-common</module>
+		<module>shopmall-search</module>
+		<module>shopmall-seckill</module>
 	</modules>
 </project>
