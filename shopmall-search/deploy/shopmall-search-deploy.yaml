@@ -1,5 +1,5 @@
 kind: Deployment
-apiVersion: app/v1
+apiVersion: apps/v1
 metadata:
   name: shopmall-search
   namespace: shopmall
@@ -34,7 +34,7 @@ spec:
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
-    type: RollingUdate
+    type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 25%
       maxSurge: 25%
