@@ -25,7 +25,7 @@ pipeline {
         }
       }
     }
-    stage ('構建鏡像-推送鏡像') {
+    stage ('構建鏡像-推送鏡像')  {
       steps {
         container ('maven') {
           sh 'mvn -Dmaven.test.skip=true -gs `pwd`/maven-settings.xml clean package'
