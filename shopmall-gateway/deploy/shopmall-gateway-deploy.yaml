@@ -1,5 +1,5 @@
 kind: Deployment
-apiVersion: app/v1
+apiVersion: apps/v1beta1
 metadata:
   name: shopmall-gateway
   namespace: shopmall
