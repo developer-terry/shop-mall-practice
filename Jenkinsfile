@@ -62,7 +62,7 @@ pipeline {
             withCredentials([usernamePassword(credentialsId: "$GITHUB_CREDENTIAL_ID", passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
               sh 'git config --global user.email "p134030772@gmail.com" '
               sh 'git config --global user.name "terrylee" '
-              sh 'git tag -a $PROJECT_NAME_$PROJECT_VERSION -m "$PROJECT_VERSION" '
+              sh "git tag -a ${PROJECT_NAME}_${PROJECT_VERSION} -m ${PROJECT_VERSION} "
               sh 'git push http://$GIT_USERNAME:$GIT_PASSWORD@github.com/$GITHUB_ACCOUNT/shop-mall-practice.git --tags --ipv4'
             }
         }
