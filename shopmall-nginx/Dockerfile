@@ -1,6 +1,6 @@
 FROM nginx:latest
 
-COPY nginx/html /usr/share/nginx/html
-COPY nginx/conf /etc/nginx
+COPY html /usr/share/nginx/html
+COPY conf /etc/nginx
 
 EXPOSE 80
