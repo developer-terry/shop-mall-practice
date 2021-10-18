@@ -1,7 +1,7 @@
 spring:
   datasource:
     username: root
-    password: root
+    password: 123456
     url: jdbc:mysql://shopmall-mysql-master.shopmall:3306/shopmall_pms
     driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
