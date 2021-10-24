@@ -38,6 +38,7 @@ public class IndexController {
         System.out.println("=========================");
         System.out.println(categoryEntities);
         System.out.println("=========================");
+        model.addAttribute("text", "test text");
 
         System.out.println(httpSession.getAttribute("loginUser"));
 
