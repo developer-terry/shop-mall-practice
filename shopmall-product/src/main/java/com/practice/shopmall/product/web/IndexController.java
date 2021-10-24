@@ -35,8 +35,10 @@ public class IndexController {
         List<CategoryEntity> categoryEntities = categoryService.getFirstLevelCategories();
 
         model.addAttribute("categories", categoryEntities);
+        System.out.println("=========================");
+        System.out.println(categoryEntities);
+        System.out.println("=========================");
 
-//        System.out.println(categoryEntities);
         System.out.println(httpSession.getAttribute("loginUser"));
 
         return "index";
