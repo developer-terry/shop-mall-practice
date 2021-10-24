@@ -1,4 +1,8 @@
 spring:
+    cloud:
+        nacos:
+            discovery:
+                server-addr: nacos-service.shopmall:8848
     datasource:
         type: com.alibaba.druid.pool.DruidDataSource
         druid:
